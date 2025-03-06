@@ -25,7 +25,7 @@ HIGH_SNR_value = fn.SNR(u_plus, F_HIGH_SNR, fs, delta_x, RON, G, FWHM)  # SNR = 
 
 ########## GENERATE DATA ##########
 if __name__ == "__main__":
-    filename = "Data_paper_1.xlsx"
+    filename = "Data_paper_Mendez.xlsx"
     n_simulations = 250
     fn.generate_excel(filename, n_simulations, fluxes, TRUE_x_c, fs, n_pix, delta_x, D, RON, G, FWHM)
 
