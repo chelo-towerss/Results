@@ -9,11 +9,8 @@ RON = 5                                             # Read-out noise (e^-)
 D = 0                                               # Dark current (e^-/s)
 x_c = 0                                             # True centroid position (arsec)
 u_plus = 1.164                                      # Corresponding u_plus for P = 0.9 (change to 1.525 for P = 0.97)
-delta_x = 0.15                                      # Pixel size (arcsec)
 n_pixels = 201                                      # Number of pixels
 fwhm = 1.88                                         # FWHM (arcsec)
-F_LOW_SNR = 840                                     # Total flux value for LOW_SNR (ADU)
-F_HIGH_SNR = 13600                                  # Total flux value for HIGH_SNR (ADU)
 n_simulations = 250                                 # Number of simulations per configuration
 n_repetitions = 100                                 # Number of repetitions to obtain the average empirical variance
 
@@ -31,7 +28,7 @@ fig.suptitle('Performance of the Weighted Least Squares Estimators (uniform weig
 precomputed_variances = {}
 empirical_variance_results = {dx: np.zeros(n_repetitions) for dx in delta_x_special_values}
 
-# calculate the variance of the WLS estimates for each delta x and each flow
+# Calculate the variance of the WLS estimates for each delta x and each flow
 for i, F in enumerate(Fluxes):
     variances = np.zeros_like(delta_x_values)
     var_LS_values = np.zeros_like(delta_x_values)
